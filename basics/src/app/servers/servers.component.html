@@ -1,6 +1,7 @@
 <h3>App Component</h3>
 <hr>
 <input type="text" class="form-control" (input)='onUpdateServerName($event)'>
+<input type="text" class="form-control" [(ngModel)]='serverName'>
 <p>{{ serverName }}</p>
 <button 
     class="btn btn-primary"
