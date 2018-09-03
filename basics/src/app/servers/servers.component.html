@@ -27,3 +27,12 @@
     [disabled]="username.length == 0"
     (click)="resetUsername()"
 >Reset Username</button>
+
+<hr>
+
+<button class="btn btn-primary" (click)="toggleSecretVisibility($event)">Toggle Details</button>
+<p *ngIf="secretVisible">Secret password is 'tuna'</p>
+<p 
+    [ngStyle]="{ backgroundColor: secretButtonLogs.length >= 5 ? 'lightBlue' : 'clear' }"
+    [ngClass]="{ whiteText: secretButtonLogs.length >= 5 }"
+>Number of button clicks = {{ secretButtonLogs.length }}</p>

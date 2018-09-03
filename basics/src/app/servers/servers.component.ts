@@ -5,7 +5,11 @@ import { Component, OnInit } from '@angular/core';
 //   selector: '[app-servers]',
 //   selector: '.app-servers',
   templateUrl: './servers.component.html',
-  styleUrls: ['./servers.component.css']
+  styles: [`
+    .whiteText {
+        color: white;
+    }
+  `]
 })
 export class ServersComponent implements OnInit {
 
@@ -15,6 +19,8 @@ export class ServersComponent implements OnInit {
   serverCreated = false
   servers = ['Testserver', 'Testserver2']
   username = '';
+  secretVisible = false;
+  secretButtonLogs = [];
     
   constructor() {
     setTimeout(() => {
@@ -41,6 +47,11 @@ export class ServersComponent implements OnInit {
 
   resetUsername() {
       this.username = '';
+  }
+
+  toggleSecretVisibility(event: any) {
+      this.secretVisible = !this.secretVisible;
+      this.secretButtonLogs.push(event)
   }
 
 }
