@@ -51,7 +51,7 @@ export class ServersComponent implements OnInit {
 
   toggleSecretVisibility(event: any) {
       this.secretVisible = !this.secretVisible;
-      this.secretButtonLogs.push(event)
+      this.secretButtonLogs.push(this.secretButtonLogs.length + 1)
   }
 
 }
