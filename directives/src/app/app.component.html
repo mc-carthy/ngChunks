@@ -2,3 +2,12 @@
 <p appBetterHighlight [defaultColour]="'yellow'" [highlightColour]="'red'">Style me with better directive!</p>
 
 <p *appUnless="hideElement">Hidden element</p>
+
+<div [ngSwitch]="value">
+    <p *ngSwitchCase="5">Value is 5</p>
+    <p *ngSwitchCase="10">Value is 10</p>
+    <p *ngSwitchCase="15">Value is 15</p>
+    <p *ngSwitchCase="20">Value is 20</p>
+    <p *ngSwitchDefault>No value provided</p>
+
+</div>

@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'directives';
   hideElement: boolean = true;
+  value: number = 5
 
   ngOnInit() {
     setTimeout(() => {
