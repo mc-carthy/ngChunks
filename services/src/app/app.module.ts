@@ -9,6 +9,7 @@ import { AccountsService } from './shared/accounts.service';
 import { LoggingService } from './shared/logging.service';
 import { ActiveUsersComponent } from './active-users/active-users.component';
 import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
+import { CounterService } from './shared/counter.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { InactiveUsersComponent } from './inactive-users/inactive-users.componen
   ],
   providers: [
       AccountsService,
-      LoggingService
+      LoggingService,
+      CounterService
   ],
   bootstrap: [AppComponent]
 })
