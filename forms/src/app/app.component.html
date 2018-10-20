@@ -72,6 +72,18 @@
                     </div>
                 <span *ngIf="!secretData.valid && secretData.touched" class="help-block invalid-text">Please enter valid secret data</span>
                 </div>
+                <div class="radio" *ngFor="let gender of genders">
+                    <label>
+                        <input 
+                            type="radio"
+                            name="gender"
+                            required
+                            ngModel
+                            [value]="gender"
+                        >
+                        {{ gender }}
+                    </label>
+                </div>
                 <button 
                     [disabled]="!f.valid"
                     class="btn btn-primary" 

@@ -9,6 +9,7 @@ import { NgForm } from '@angular/forms';
 export class AppComponent {
     defaultSecret: string = 'pet';
     answer: string = "";
+    genders = ['male', 'female']
 
     onSubmit(form: NgForm) {
         console.log(form);
