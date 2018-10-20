@@ -4,7 +4,7 @@
             <form (ngSubmit)="onSubmit(f)" #f="ngForm">
                 <div 
                     id="user-data" 
-                    ngModelGroup="user-data"
+                    ngModelGroup="userData"
                     #userData="ngModelGroup"
                 >
                     <div class="form-group">
@@ -20,7 +20,7 @@
                         >
                         <span  *ngIf="!username.valid && username.touched" class="help-block invalid-text">Please enter a username</span>
                     </div>
-                    <button class="btn btn-default" (click)="onSuggestUsername()">Suggest a Username</button>
+                    <button class="btn btn-default" (click)="onSuggestUsername()" type="button">Suggest a Username</button>
                     <div class="form-group">
                         <label for="email">Mail</label>
                         <input 
@@ -39,7 +39,7 @@
                 </div>
                 <div 
                     id="secret-data" 
-                    ngModelGroup="secret-data"
+                    ngModelGroup="secretData"
                     #secretData="ngModelGroup"
                 >
                     <div class="form-group">
@@ -91,5 +91,14 @@
                 >Submit</button>
             </form>
         </div>
+    </div>
+    <hr>
+    <div class="row col-xs-12" *ngIf="submitted">
+        <h3>Your data</h3>
+        <p>Username: {{ user.username }}</p>
+        <p>Email address: {{ user.email }}</p>
+        <p>Secret Question: Your first {{ user.secretQuestion }}?</p>
+        <p>Secret Answer: {{ user.secretAnswer }}</p>
+        <p>Gender: {{ user.gender }}</p>
     </div>
 </div>

@@ -12,9 +12,24 @@ export class AppComponent {
     defaultSecret: string = 'pet';
     answer: string = "";
     genders = ['male', 'female']
+    user = {
+        username: '',
+        email: '',
+        secretQuestion: '',
+        secretAnswer: '',
+        gender: ''
+    };
+    submitted = false;
 
-    onSubmit(form: NgForm) {
-        console.log(form);
+    // onSubmit(form: NgForm) {
+    onSubmit() {
+        console.log(this.signupForm);
+        this.user.username = this.signupForm.value.userData.username;
+        this.user.email = this.signupForm.value.userData.email;
+        this.user.secretQuestion = this.signupForm.value.secretData.secret;
+        this.user.secretAnswer = this.signupForm.value.secretData.secretAnswer;
+        this.user.gender = this.signupForm.value.gender;
+        this.submitted = true;
     }
 
     onSuggestUsername() {
