@@ -44,6 +44,16 @@
                         <option value="pet">Your first pet</option>
                         <option value="teacher">Your first teacher</option>
                     </select>
+                </div>
+                <div class="form-group">
+                    <textarea 
+                        name="secretAnswer" 
+                        [(ngModel)]="answer"
+                        class="form-control"
+                        cols="30" 
+                        rows="3"
+                    ></textarea>
+                    <p>Your reply was: {{ answer }}</p>
                     <span *ngIf="!secret.valid && secret.touched" class="help-block invalid-text">Please select a question</span>
                 </div>
                 <button 

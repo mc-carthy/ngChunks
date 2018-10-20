@@ -7,7 +7,8 @@ import { NgForm } from '@angular/forms';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    defaultSecret = 'pet'
+    defaultSecret: string = 'pet';
+    answer: string = "";
 
     onSubmit(form: NgForm) {
         console.log(form);
