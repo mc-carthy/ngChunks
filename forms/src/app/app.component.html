@@ -2,7 +2,11 @@
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
             <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-                <div id="user-data">
+                <div 
+                    id="user-data" 
+                    ngModelGroup="user-data"
+                    #userData="ngModelGroup"
+                >
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input 
@@ -31,30 +35,42 @@
                         >
                         <span *ngIf="!email.valid && email.touched" class="help-block invalid-text">Please enter a valid email address</span>
                     </div>
+                    <span *ngIf="!userData.valid && userData.touched" class="help-block invalid-text">Please enter valid user data</span>
                 </div>
-                <div class="form-group"><label for="secret">Secret questions</label>
-                    <select 
-                    [ngModel]="defaultSecret"
-                    name="secret"
-                    #secret="ngModel"
-                    required
-                    id="secret" 
-                        class="form-control"
-                    >
+                <div 
+                    id="secret-data" 
+                    ngModelGroup="secret-data"
+                    #secretData="ngModelGroup"
+                >
+                    <div class="form-group">
+                        <label for="secret">Secret questions</label>
+                        <select 
+                            [ngModel]="defaultSecret"
+                            name="secret"
+                            #secret="ngModel"
+                            required
+                            id="secret" 
+                            class="form-control"
+                        >
                         <option value="pet">Your first pet</option>
                         <option value="teacher">Your first teacher</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <textarea 
+                        </select>
+                        <span *ngIf="!secret.valid && secret.touched" class="help-block invalid-text">Please select a question</span>
+                    </div>
+                    <div class="form-group">
+                        <textarea 
                         name="secretAnswer" 
                         [(ngModel)]="answer"
+                        #secretAnswer="ngModel"
                         class="form-control"
+                        required
                         cols="30" 
                         rows="3"
-                    ></textarea>
-                    <p>Your reply was: {{ answer }}</p>
-                    <span *ngIf="!secret.valid && secret.touched" class="help-block invalid-text">Please select a question</span>
+                        ></textarea>
+                        <span *ngIf="!secretAnswer.valid && secretAnswer.touched" class="help-block invalid-text">Please enter an answer</span>
+                        <p>Your reply was: {{ answer }}</p>
+                    </div>
+                <span *ngIf="!secretData.valid && secretData.touched" class="help-block invalid-text">Please enter valid secret data</span>
                 </div>
                 <button 
                     [disabled]="!f.valid"
