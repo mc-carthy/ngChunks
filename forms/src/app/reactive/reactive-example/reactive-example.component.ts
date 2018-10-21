@@ -22,4 +22,8 @@ export class ReactiveExampleComponent implements OnInit {
         });
     }
 
+    onSubmit() {
+        console.log(this.signupForm);
+    }
+
 }
