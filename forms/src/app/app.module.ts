@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TdFormAssignmentComponent } from './template-driven/form-assignment/form-assignment.component';
 import { TdExampleComponent } from './template-driven/example/example.component';
+import { ReactiveExampleComponent } from './reactive/reactive-example/reactive-example.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TdFormAssignmentComponent,
-    TdExampleComponent
+    TdExampleComponent,
+    ReactiveExampleComponent
   ],
   imports: [
     BrowserModule,
