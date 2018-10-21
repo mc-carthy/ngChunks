@@ -22,7 +22,7 @@ export class ReactiveExampleComponent implements OnInit {
                 'email': new FormControl(null, [Validators.required, Validators.email], this.forbiddenEmails)
             }),
             'gender': new FormControl('Male', Validators.required),
-            'hobbies': new FormArray([])
+            'hobbies': new FormArray([new FormControl(null)])
         });
         // this.signupForm.valueChanges.subscribe(
         //     (value) => {
@@ -34,6 +34,20 @@ export class ReactiveExampleComponent implements OnInit {
         //         console.log(status)
         //     }
         // );
+
+        this.signupForm.setValue({
+            'userData': {
+                'username': 'testUsername',
+                'email': 'testEmail@email.com'
+            },
+            'gender': 'Male',
+            'hobbies': ['Cooking']
+        });
+        this.signupForm.patchValue({
+            'userData': {
+                'email': 'patched@email.com'
+            },
+        });
     }
 
     onAddHobby() {
@@ -43,6 +57,7 @@ export class ReactiveExampleComponent implements OnInit {
 
     onSubmit() {
         console.log(this.signupForm);
+        this.signupForm.reset();
     }
 
     forbiddenNames(control: FormControl) : {[s: string]: boolean} {
