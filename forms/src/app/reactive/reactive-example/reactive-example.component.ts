@@ -24,6 +24,16 @@ export class ReactiveExampleComponent implements OnInit {
             'gender': new FormControl('Male', Validators.required),
             'hobbies': new FormArray([])
         });
+        // this.signupForm.valueChanges.subscribe(
+        //     (value) => {
+        //         console.log(value)
+        //     }
+        // );
+        // this.signupForm.statusChanges.subscribe(
+        //     (status) => {
+        //         console.log(status)
+        //     }
+        // );
     }
 
     onAddHobby() {
