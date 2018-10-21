@@ -6,7 +6,7 @@ import { NgForm } from '@angular/forms';
     templateUrl: './form-assignment.component.html',
     styleUrls: ['./form-assignment.component.css']
 })
-export class FormAssignmentComponent implements OnInit {
+export class TdFormAssignmentComponent implements OnInit {
     @ViewChild('f') form: NgForm;
 
     subscriptionTypes = ['Basic', 'Advanced', 'Pro']
