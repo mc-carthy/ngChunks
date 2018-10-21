@@ -30,6 +30,7 @@ export class AppComponent {
         this.user.secretAnswer = this.signupForm.value.secretData.secretAnswer;
         this.user.gender = this.signupForm.value.gender;
         this.submitted = true;
+        this.signupForm.reset();
     }
 
     onSuggestUsername() {
