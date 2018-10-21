@@ -1,15 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-form-assignment',
-  templateUrl: './form-assignment.component.html',
-  styleUrls: ['./form-assignment.component.css']
+    selector: 'app-form-assignment',
+    templateUrl: './form-assignment.component.html',
+    styleUrls: ['./form-assignment.component.css']
 })
 export class FormAssignmentComponent implements OnInit {
+    @ViewChild('f') form: NgForm;
 
-  constructor() { }
+    subscriptionTypes = ['Basic', 'Advanced', 'Pro']
+    defaultSubscription = 'Advanced';
+    formData = {
+        email: '',
+        subscriptionType: '',
+        password: ''
+    }
+    submitted = false;
 
-  ngOnInit() {
-  }
+    constructor() { }
+
+    ngOnInit() {
+    }
+
+    onSubmit() {
+        console.log(this.form.value);
+        this.submitted = true;
+        this.formData.email = this.form.value.email;
+        this.formData.subscriptionType = this.form.value.subscription;
+        this.formData.password = this.form.value.password;
+        this.form.reset();
+    }
 
 }
