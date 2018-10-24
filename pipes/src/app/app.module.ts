@@ -7,6 +7,7 @@ import { PipeExampleComponent } from './pipe-example/pipe-example.component';
 import { ShortenPipe } from './pipe-example/shorten.pipe';
 import { FilterPipe } from './pipe-example/filter.pipe';
 import { ReversePipe } from './pipe-example/reverse.pipe';
+import { SortPipe } from './pipe-example/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ReversePipe } from './pipe-example/reverse.pipe';
     PipeExampleComponent,
     ShortenPipe,
     FilterPipe,
-    ReversePipe
+    ReversePipe,
+    SortPipe
   ],
   imports: [
     BrowserModule,
