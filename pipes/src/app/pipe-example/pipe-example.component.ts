@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PipeExampleComponent implements OnInit {
 
+    appStatus = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('stable');
+        }, 2000);
+    });
+
     filteredStatus = '';
 
     servers = [
