@@ -34,4 +34,12 @@ export class ExampleService {
             }
         ));
     }
+
+    getAppName() {
+        return this.http.get('https://nghttp-30b84.firebaseio.com/appName.json').pipe(map(
+            (response: Response) => {
+                return response.json();
+            }
+        ));
+    }
 }

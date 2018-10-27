@@ -9,6 +9,7 @@ import { ExampleService } from './example.service';
 })
 export class ExampleComponent implements OnInit {
 
+    appName = this.service.getAppName();
     servers = [
         {
             name: 'Testserver',
