@@ -44,7 +44,7 @@ export class ExampleComponent implements OnInit {
 
     onGetServers() {
         this.service.getServers().subscribe(
-            (servers: any[]) => console.log(servers),
+            (servers: any[]) => this.servers = servers,
             (error) => console.log(error)
         );
     }
