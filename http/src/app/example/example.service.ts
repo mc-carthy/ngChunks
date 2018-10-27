@@ -1,6 +1,7 @@
 import { Http, Headers, Response } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 @Injectable()
 export class ExampleService {
@@ -25,6 +26,11 @@ export class ExampleService {
             (response: Response) => {
                 const data = response.json();
                 return data;
+            }
+        ))
+        .pipe(catchError(
+            (error: Response) => {
+                return throwError('Something went wrong, could not get servers');
             }
         ));
     }
