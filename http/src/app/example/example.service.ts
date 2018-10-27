@@ -13,4 +13,8 @@ export class ExampleService {
             { headers: headers}
         );
     }
+
+    getServers() {
+        return this.http.get('https://nghttp-30b84.firebaseio.com/data.json')
+    }
 }

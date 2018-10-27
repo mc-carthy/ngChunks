@@ -1,3 +1,4 @@
+import { Response } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
 import { ExampleService } from './example.service';
 
@@ -37,6 +38,16 @@ export class ExampleComponent implements OnInit {
     onSaveServers() {
         this.service.storeServers(this.servers).subscribe(
             (response) => console.log(response),
+            (error) => console.log(error)
+        );
+    }
+
+    onGetServers() {
+        this.service.getServers().subscribe(
+            (response: Response) => {
+                const data = response.json();
+                console.log(data);
+            },
             (error) => console.log(error)
         );
     }
