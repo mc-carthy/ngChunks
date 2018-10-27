@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ExampleComponent } from './example/example.component';
+import { ExampleService } from './example/example.service';
 
 @NgModule({
   declarations: [
@@ -10,9 +12,10 @@ import { ExampleComponent } from './example/example.component';
     ExampleComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [ExampleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

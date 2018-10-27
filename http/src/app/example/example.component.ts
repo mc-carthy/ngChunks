@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ExampleService } from './example.service';
 
 @Component({
     selector: 'app-example',
@@ -20,7 +21,7 @@ export class ExampleComponent implements OnInit {
         }
     ];
 
-    constructor() { }
+    constructor(private service: ExampleService) { }
 
     ngOnInit() {
     }
@@ -31,6 +32,13 @@ export class ExampleComponent implements OnInit {
             capacity: 50,
             id: this.generateId()
         });
+    }
+
+    onSaveServers() {
+        this.service.storeServers(this.servers).subscribe(
+            (response) => console.log(response),
+            (error) => console.log(error)
+        );
     }
 
     private generateId() {
